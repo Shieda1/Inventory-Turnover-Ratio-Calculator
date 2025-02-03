@@ -5,47 +5,179 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inventory Turnover Ratio Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <!-- Unicons CSS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <link rel="stylesheet" href="style.css">
+  <!-- favcon -->
+  <link rel="icon" type="image/x-icon" href="../favicon.png">
 </head>
 <body>
-  <!-- radio -->
-  <input type="radio" id="inventoryTurnoverRatioRadio" name="variables" checked>
-  <label for="inventoryTurnoverRatioRadio">Inventory Turnover Ratio</label>
+  <div class="scrollTop">
+    <i class="fa fa-caret-up" aria-hidden="true"></i>
+  </div>
 
-  <input type="radio" id="costofGoodsSoldRadio" name="variables">
-  <label for="costofGoodsSoldRadio">Cost of Goods Sold</label>
-
-  <input type="radio" id="averageInventoryRadio" name="variables">
-  <label for="averageInventoryRadio">Average Inventory</label><br><br>
-  <!-- end radio -->
+<!-- header -->
+<nav class="nav">
+  <i class="uil uil-bars navOpenBtn"></i>
   
-  <label for="v1" id="variable1">Cost of Goods Sold</label>
-  <input type="number" id="v1"><br><br>
+  <ul id="nav-links" class="nav-links">
+    <i class="uil uil-times navCloseBtn"></i>
+    <a href="../../accounting calculators/index.html"><li><div class="link-text">Accounting</div></li></a>
+    <a href="../../area calculators/index.html"><li><div class="link-text">Area</div></li></a>
+    <a href="../../arithmetics calculators/index.html"><li><div class="link-text">Arithmetics</div></li></a>
+    <a href="../../chemistry calculators/index.html"><li><div class="link-text">Chemistry</div></li></a>
+    <a href="../../construction calculators/index.html"><li><div class="link-text">Construction</div></li></a>
+    <a href="../../conversion calculators/index.html"><li><div class="link-text">Conversion</div></li></a>
+    <a id="selected-link" href="../../finance calculators/index.html"><li><div class="link-text">Finance</div></li></a>
+    <a href="../../geometry calculators/index.html"><li><div class="link-text">Geometry</div></li></a>
+    <a href="../../health calculators/index.html"><li><div class="link-text">Health</div></li></a>
+    <a href="../../math calculators/index.html"><li><div class="link-text">Math</div></li></a>
+    <a href="../../physics calculators/index.html"><li><div class="link-text">Physics</div></li></a>
+    <a href="../../random calculators/index.html"><li><div class="link-text">Random</div></li></a>
+    <a href="../../SEO calculators/index.html"><li><div class="link-text">SEO</div></li></a>
+  </ul>
+    <a href="../../index.html">
+      <img src="../logo.png" alt="logo" class="logo">
+  </a>
+</nav>
+<!-- end header -->
   
-  <label for="v2" id="variable2">Average Inventory</label>
-  <input type="number" id="v2"><br><br>
+<div class="text-calculator-container">
+  <!-- calculator -->
+  
+  <div class="pattern">
+  <div class="calculator-container">
+    <div id="calculator">
 
-  <button id="btn">compute</button>
+    <!-- radio -->
 
-  <p id="result"></p>
-  <p>
-    Insert the information in the form and the calculator will determine the inventory turnover ratio<br> 
-    What is the inventory turnover ratio?<br>
-    the inventory turnover ratio is a financial ratio that tells how many times a comapny has sold and replaced inventory during a specific period of time.<br>
-    How to calculate inventory turnover ratio?<br>
-    To calculate inventory turnover ratio you should use the following formula:<br>
-    inventory turnover ratio = cost of goods sold (COGS) / average value of inventory<br>
-    example:company x had a cost of sales of $4,600,000 and an inventory of $630,000 in the second year and an inventory of $520,000 in the first year, calculate the inventory turnover ratio and the days inventory.<br>
-    using the following formulas the answer will be:<br>
-    inventory turnover ratio = cost of goods sold / average value of inventory<br>
-    inventory turnover ratio = $4,600,000 / (($630,000 + $520,000) / 2)<br>
-    inventory turnover ratio = 8<br>
-    days inventory = 365 / 8<br>
-    days inventory = 45 days<br>
-    Why use inventory turnover ratio?<br>
-    the inventory turnover ratio is used to help a company in making smarter decisions about pricing, marketing, manufacturing and purchasing. simplay the inventory turnover ratio measures how good the company is at generating sales from it's stock.<br>
+    <div id="radio">
+      <div class="double-radios">
+        <label><input type="radio" id="inventoryTurnoverRatioRadio" checked name="variables">Inventory Turnover Ratio</label>
+        <label><input type="radio" id="costofGoodsSoldRadio" name="variables">Cost of Goods Sold</label>
+      </div>
+      <div class="single-radio"> 
+        <label><input type="radio" id="averageInventoryRadio" name="variables">GDP ITPP</label>
+      </div>
+    </div>
 
-</p>
+    <!-- end radio -->
+
+      <div class="inputs">
+        <input id="v1" class="numbers-input first-input" ><label for="v1" id="variable1">Cost of Goods Sold</label><br>
+        <input id="v2" class="numbers-input last-input" ><label for="v2" id="variable2">Average Inventory</label><br><br>
+      </div>
+      <div class="buttons">
+        <button id="btn1" class="result-buttons">compute</button>
+        <button id="btn2" class="result-buttons">reset</button>
+      </div>
+      
+      <p id="result"></p>
+
+    </div>
+  </div>
+</div>
+  <!-- end calculator -->
+
+  <!-- text -->
+<div class="text">
+  <h4>Insert the information in the form and the calculator will determine the inventory turnover ratio.</h4><br> 
+    <h3>What is the inventory turnover ratio?</h3><br>
+    <p>The inventory turnover ratio is a financial ratio that tells how many times a comapny has sold and replaced inventory during a specific period of time.</p><br>
+    <h3>How to calculate inventory turnover ratio?</h3><br>
+    <p>To calculate inventory turnover ratio you should use the following formula:<br>
+      inventory turnover ratio = cost of goods sold (COGS) / average value of inventory</p><br>
+      <h4>example: company x had a cost of sales of $4,600,000 and an inventory of $630,000 in the second year and an inventory of $520,000 in the first year, calculate the inventory turnover ratio and the days inventory?</h4><br>
+      <p>Using the following formulas the answer will be:<br>
+        inventory turnover ratio = cost of goods sold / average value of inventory<br>
+        inventory turnover ratio = $4,600,000 / (($630,000 + $520,000) / 2)<br>
+        inventory turnover ratio = 8<br>
+        days inventory = 365 / 8<br>
+        days inventory = 45 days</p><br>
+    <h3>Why use inventory turnover ratio?</h3><br>
+    <p>The inventory turnover ratio is used to help a company in making smarter decisions about pricing, marketing, manufacturing and purchasing. simplay the inventory turnover ratio measures how good the company is at generating sales from it's stock.</p><br>
+  </div>
+  <!-- end text-->
+</div>
+
+<div class="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Ophz0_bkUAg?si=yvoUdi3L4oHG_AHp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!-- calculators cards -->
+
+<section id="other-calculators">
+  <div class="title">
+      <h1>Other people also used:</h1>
+  </div>
+  <div class="wrapper">
+      <div class="double-calculators">
+        <a href="../Levered-Free-Cash-Flow-Calculator/index.html">
+          <div class="single-calculator">
+              <span></span>
+              <h3>Levered Free Cash Flow</h3>
+              <p>The levered free cash flow calculator is a tool that computes the amount of cash generated after paying debt obligations.</p>
+          </div>
+      </a>
+      <a href="../Loan-to-Deposit-Ratio-Calculator/index.html">
+        <div class="single-calculator">
+            <span></span>
+            <h3>Loan to Deposit Ratio</h3>
+            <p>The loan to deposit ratio calculator is a tool that calculates the loan to deposit ratio.</p>
+        </div>
+    </a>
+      </div>
+      <div class="double-calculators">
+        <a href="../Margin-Calculator/index.html">
+          <div class="single-calculator">
+              <span></span>
+              <h3>Margin</h3>
+              <p>It's a tool that calculates an item's revenue, assuming you know its cost and your desired profit margin percentage.</p>
+          </div>
+      </a>
+          <a href="../Markup-Calculator/index.html">
+              <div class="single-calculator">
+                  <span></span>
+                  <h3>Markup</h3>
+                  <p>The markup calculator is a tool that determines the sale price.</p>
+              </div>
+          </a>
+      </div>
+  </div>
+</section>
+
+<!-- end calculators cards -->
+
+  <!-- footer -->
+
+  <footer>
+    <a href="../../index.html">
+      <img src="../logo.png" alt="logo" class="logo">
+  </a>
+    <div class="footer-container">
+      <div class="footer-link">
+        <a href="../../finance calculators/index.html">other finance calculators</a>
+      </div>
+      <div class="footer-aboutus">
+        <h2>ABOUT US</h2>
+        <p>Welcome to Numerion, where we make complex equations accessible and learning enjoyable. By combining expert equation-solving services with comprehensive educational resources, Numerion offers tailored solutions for every learning level.</p>
+      </div>
+      <div class="footer-contactus">
+        <h2>CONTACT US</h2>
+        <div class="gmail">
+          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          <p><a href="mailto:contactnumerion@gmail.com">contactnumerion@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="copyrightText">
+    <p>Copyright @ 2025 Numerion. All Rights Reserved.</p>
+  </div>
+  <!-- end footer -->
+
   <script src="app.js"></script>
 </body>
 </html>

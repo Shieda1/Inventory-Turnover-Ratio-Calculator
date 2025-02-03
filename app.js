@@ -1,8 +1,7 @@
-// https://calculator.swiftutors.com/inventory-turnover-ratio-calculator.html
-
 const v1 =  document.getElementById('v1');
 const v2 = document.getElementById('v2');
-const btn = document.getElementById('btn');
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
 const result = document.getElementById('result');
 
 // radio buttons
@@ -23,32 +22,54 @@ inventoryTurnoverRatioRadio.addEventListener('click', function() {
   variable2.textContent = 'Average Inventory';
   costofGoodsSold = v1;
   averageInventory = v2;
+  result.textContent = '';
 });
 
 costofGoodsSoldRadio.addEventListener('click', function() {
-  variable1.textContent = 'Inventory Turnover Ratio';
+  variable1.textContent = 'ITR';
   variable2.textContent = 'Average Inventory';
   inventoryTurnoverRatio = v1;
   averageInventory = v2;
+  result.textContent = '';
 });
 
 averageInventoryRadio.addEventListener('click', function() {
-  variable1.textContent = 'Inventory Turnover Ratio';
+  variable1.textContent = 'ITR';
   variable2.textContent = 'Cost of Goods Sold';
   inventoryTurnoverRatio = v1;
   costofGoodsSold = v2;
+  result.textContent = '';
 });
 
-btn.addEventListener('click', function() {
+btn1.addEventListener('click', function() {
   
-  if(inventoryTurnoverRatioRadio.checked)
-    result.textContent = `Inventory Turnover Ratio = ${computeInventoryTurnoverRatio().toFixed(2)}`;
+  if(inventoryTurnoverRatioRadio.checked) {
+    if(isNaN(computeInventoryTurnoverRatio()))
+      result.textContent = "wrong input";
+    else
+      result.textContent = `Inventory Turnover Ratio = ${computeInventoryTurnoverRatio().toFixed(4)}`;
+  }
 
-  else if(costofGoodsSoldRadio.checked)
-    result.textContent = `Cost of Goods Sold = ${computeCostofGoodsSold().toFixed(2)}`;
+  else if(costofGoodsSoldRadio.checked) {
+    if(isNaN(computeCostofGoodsSold()))
+      result.textContent = "wrong input";
+    else
+      result.textContent = `Cost of Goods Sold = ${computeCostofGoodsSold().toFixed(4)}`;
+  }
+    
+  else if(averageInventoryRadio.checked) {
+    if(isNaN(computeAverageInventory()))
+      result.textContent = "wrong input";
+    else
+      result.textContent = `Average Inventory = ${computeAverageInventory().toFixed(4)}`;
+  }
+})
 
-  else if(averageInventoryRadio.checked)
-    result.textContent = `Average Inventory = ${computeAverageInventory().toFixed(2)}`;
+btn2.addEventListener('click', function() {
+  
+  v1.value = '';
+  v2.value = '';
+  result.textContent = '';
 })
 
 // calculation
@@ -64,3 +85,35 @@ function computeCostofGoodsSold() {
 function computeAverageInventory() {
   return Number(costofGoodsSold.value) / Number(inventoryTurnoverRatio.value);
 }
+
+// design
+
+const nav = document.querySelector(".nav"),
+  navOpenBtn = document.querySelector(".navOpenBtn"),
+  navCloseBtn = document.querySelector(".navCloseBtn");
+
+navOpenBtn.addEventListener("click", () => {
+  nav.classList.add("openNav");
+});
+navCloseBtn.addEventListener("click", () => {
+  nav.classList.remove("openNav");
+});
+
+// progress
+
+var scroll = this.document.querySelector('.scrollTop');
+
+window.addEventListener('scroll', function() {
+  scroll.classList.toggle('active', window.scrollY > 150)
+
+  
+})
+
+scroll.addEventListener('click', function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+})
+
+// end progress
